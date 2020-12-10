@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>EdNet</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="edscript.js" defer></script>
+    <style>
+
+        body {
+            font-family: 'Trebuchet MS', sans-serif;
+	        background-color: #404040;
+        }
+
+        .title {
+	        color: white;
+	        text-align: center;
+        }
+
+        .tab {
+	        overflow: hidden;
+	        border: none;
+	        background-color: #808080;
+        }
+
+        .tab button {
+	        background-color: inherit;
+	        float: left;
+	        border: none;
+	        outline: none;
+	        cursor: pointer;
+	        padding: 14px 16px;
+	        transition: 0.5s;
+        }
+
+        .tab button:hover {
+ 	        background-color: #b3b3b3;
+        }
+
+        html, body{
+            height: 100%;
+            width: 100%;
+        }
+
+        input[type=text] {
+	        width: 150px;
+	        padding: 12px 20px;
+	        margin: 8px 0;
+	        box-sizing: border-box;
+	        border: none;
+	        border-radius: 3px;
+	        border-bottom: 2px solid black;
+	    }
+
+        label {
+	        display: inline-block;
+	        width: 175px;
+	        height: 1px;
+	        text-align: left;
+        }
+
+        qlabel {
+	        display: inline-block;
+	        width: 300px;
+	        height: 1px;
+	        text-align: left;
+        }
+
+        .register_button {
+			display: inline-block;
+			background-color: #4CAF50; /* Green */
+			border: none;
+			border-radius: 20px;
+			color: white;
+			padding: 10px 5px;
+			text-align: center;
+			text-decoration: none;
+			font-size: 15px;
+			margin: 2px 1px;
+			cursor: pointer;
+			width: 100px;
+		}
+
+    </style>
+</head>
+  
+<body>
+
+    <div class="title">
+        <h1>EdNet</h1>
+    </div>
+
+    <div class="tab">
+        <button class="tablinks" onclick="clickInner('index.html')">Browse</button>
+        <button class="tablinks" onclick="clickInner('about.html')">About</button>
+        <button class="tablinks" onclick="clickInner('modules.html')">Modules</button>
+        <button class="tablinks" onclick="clickInner('login_page.html')">Login</button>
+        <button class="tablinks" onclick="clickInner('register.html')">Register</button>
+    </div>
+
+        <div id="about" class="tabcontent" style="background-color: #808080;">
+        <div style="margin: 15px; color: #d9d9d9;">
+        <br>
+        
+        <h3>Registration Page</h3>
+        <label>First Name</label>
+		<input type="text" id="first_name" placeholder="First Name" required></input>
+        <br>
+        <label>Last Name</label>
+		<input type="text" id="last_name" placeholder="Last Name" required></input>
+        <br>
+        <label>Username</label>
+		<input type="text" id="user_name" placeholder="Username" required></input>
+        <br>
+		<label>Password</label>
+		<input type="text" id="pass_word" placeholder="Password" required></input>
+        <br>
+        <label>Confirm Password</label>
+		<input type="text" id="pass_word" placeholder="Password" required></input>
+        <br>
+        <label>Email</label>
+		<input type="text" id="email" placeholder="Email" required></input>
+        <br>
+        <h3>Security Questions</h3>
+        <qlabel>1. Where's your hometown?</qlabel>
+        <br>
+		<input type="text" id="sq1" placeholder="Answer" required></input>
+        <br>
+
+        <qlabel>2. What's your favorite food?</qlabel>
+        <br>
+		<input type="text" id="sq2" placeholder="Answer" required></input>
+        <br>
+
+        <qlabel>3. Which team is your favorite?</qlabel>
+        <br>
+		<input type="text" id="sq3" placeholder="Answer" required></input>
+        <br>
+        <br>
+        <center>
+        <button class="register_button">Register</button>
+        </center>
+        <br>
+        <img src="pics/copyright.png">
+        <br><br>
+        </div>
+    </div>   
+    </div>
+
+</body>
+
+</html>

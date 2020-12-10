@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>EdNet</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="style.css">
+  <script src="edscript.js" defer></script>
+  <style> 
+    #container{
+      min-height: 100%;
+      height: 100%;
+      width: 100%;
+      margin: auto;
+    }
+    #topBlock {
+      height: 100px;
+      height: 30%;
+      width: 100%;
+    }
+    #bottomBlock {
+      height: 70%;
+      height: 500px;
+      width: 100%;
+    }
+    #contentBlock {
+      height:100%;
+      width:100%;
+      padding: 15px 10px 15px 0px;
+    }
+    #leftBlock {
+      /* padding: 10px 0px 10px 10px; */
+      float: left;
+      height: 100%;
+      width: 30%;
+    }
+    #rightBlock {
+      /* padding: 10px 15px 10px 0px; */
+      float: right;
+      height: 100%;
+      width: 70%;
+    }
+    #search {
+      float: left;
+      padding: 5px 5px 5px 10px;
+      background-color: #808080;
+      height: 100%;
+      width: 100%;
+      /* widt130130px; */
+    }
+    #browse {
+      float: right;
+      padding: 5px 5px 5px 10px;
+      background-color: #FFFFFF;
+      height: 100%;
+      width: 100%;
+      overflow: hidden;
+    }
+    #searchRow{
+      width: 80%;
+      height: 20%;
+    }
+    #searchText {
+      width: 120px;
+    }
+    #moduleTableDiv{
+      padding: 10px 10px 10px 0px;
+      width:100%;
+      height:100%;
+      color: black;
+    }
+    #moduleTable {
+      border-collapse: collapse;
+      width: 100%;
+    }
+
+    #moduleTable td, #moduleTable th {
+      border: 1px solid #ddd;
+      padding: 6px;
+    }
+
+    #moduleTable tr:nth-child(even){background-color: #f2f2f2;}
+
+    #moduleTable tr:hover {background-color: #ddd;}
+
+    #moduleTable th {
+      padding-top: 6px;
+      padding-bottom: 6px;
+      text-align: left;
+      background-color: #808080;
+      color: black;
+    }
+
+    #filterList{
+      list-style-type: none;
+      list-style: none;
+    }
+    
+    .dropDownContent {
+      display: none;
+    }
+
+    .show {
+      display:block;
+    }
+
+    .filterButton {
+      width: 130px;
+    }
+
+    .listProperties{
+      margin:0;
+      padding:0;
+      list-style-type: none;
+    }
+
+  </style>
+</head>
+  
+<body>
+  <div id= "container">
+    <div id="topBlock">
+      <div class="title">
+        <h1>EdNet</h1>
+      </div>
+
+      <div class="tab">
+        <button class="tablinks" onclick="clickInner('index.html')">Browse</button>
+        <button class="tablinks" onclick="clickInner('about.html')">About</button>
+        <button class="tablinks" onclick="clickInner('modules.html')">Modules</button>
+        <button class="tablinks" onclick="clickInner('login_page.html')">Login</button>
+        <button class="tablinks" onclick="clickInner('register.html')">Register</button>
+      </div>
+    
+    <div id="bottomBlock">
+      <div id="contentBlock">
+        <div id = "leftBlock">
+          <div id = "search">
+            <h2>Search</h2>
+            <span id="searchRow">
+              <div>
+              <input id="searchText" type="text" placeholder="Search..">
+              <button id="searchButton" type="submit">Submit</button>
+              </div>
+              <hr>
+              <div id="categoryFilter">
+                <button class="filterButton" onclick="toggleFilter('categoryCheckBoxes')">Filter by Category</button>
+                <div id="categoryCheckBoxes" class="dropDownContent">
+                  <ul id = "categoryList" class="listProperties">
+                    <li><input type="checkbox"> SE410</li>
+                    <li><input type="checkbox"> Teaching</li>
+                  </ul>
+                </div>
+              </div>
+              <div id="submitterFilter">
+                <button class="filterButton" onclick="toggleFilter('submitterCheckBoxes')">Filter by Submitter</button>
+                <div id="submitterCheckBoxes" class="dropDownContent">
+                  <ul id = "submitterList" class="listProperties"">
+                    <li><input type="checkbox"> Gregory Hislop</li>
+                    <li><input type="checkbox"> Kurt Schmidt</li>
+                    <li><input type="checkbox"> AdminUser</li>
+                  </ul>
+                </div>
+              </div>
+              <div id="statusFilter">
+                <button class="filterButton" onclick="toggleFilter('statusCheckBoxes')">Filter by Status</button>
+                <div id="statusCheckBoxes" class="dropDownContent">
+                  <ul id = "statusList" class="listProperties">
+                    <li><input type="checkbox"> Complete</li>
+                    <li><input type="checkbox"> Active</li>
+                    <li><input type="checkbox"> WIP</li>
+                  </ul>
+                </div>
+              </div>
+            </span>
+          </div>
+        </div>
+        <div id = "rightBlock">
+          <div id = "browse">
+            <h2>Browse EdNet</h2>
+            <div id = "moduleTableDiv">
+              <table id= "moduleTable">
+                <tr id="tableRowHeader">
+                  <th>ID</th>
+                  <th>Title</th>
+                  <th>Submitter</th>
+                  <th>Date</th>
+                  <th>Category</th>
+                  <th>Status</th>
+                  <th>Edit</th>
+                  <th>Delete</th>
+                </tr>
+                <tr>
+                  <td>1</td>
+                  <td>Reverse Engineering</td>
+                  <td>Gregory Hislop</td>
+                  <td>Decemeber 1, 2020</td>
+                  <td>SE410</td>
+                  <td>Complete</td>
+                  <td><button>Edit</button></td>
+                  <td><button>Delete</button></td>
+                </tr>
+                <tr>
+                  <td>2</td>
+                  <td>Technical Debt 101</td>
+                  <td>Gregory Hislop</td>
+                  <td>Decemeber 6, 2020</td>
+                  <td>SE410</td>
+                  <td>WIP</td>
+                  <td><button>Edit</button></td>
+                  <td><button>Delete</button></td>
+                </tr>
+                <tr>
+                  <td>3</td>
+                  <td>Exemplary UNIX</td>
+                  <td>Kurt Schmidt</td>
+                  <td>Decemeber 5, 1990</td>
+                  <td>Teaching</td>
+                  <td>Active</td>
+                  <td><button>Edit</button></td>
+                  <td><button>Delete</button></td>
+                </tr>
+                <tr>
+                  <td>4</td>
+                  <td>IS Audit</td>
+                  <td>Admin User</td>
+                  <td>Decemeber 6, 2020</td>
+                  <td>Teaching</td>
+                  <td>Active</td>
+                  <td><button>Edit</button></td>
+                  <td><button>Delete</button></td>
+                </tr>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <br>
+    <img src="pics/copyright.png">
+    <br><br>
+  </div>
+
+</body>
+
+</html>

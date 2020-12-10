@@ -1,0 +1,135 @@
+<!DOCTYPE HTML>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width = device-width, initial-scale = 1">
+        <link rel="stylesheet" href="style.css">
+		<script src="edscript.js" defer></script>
+		<title>EdNet</title>
+
+		<style>
+			
+			.logo_container {
+				display: block;
+				margin: 20px;
+				margin-left: auto;
+				margin-right: auto;
+				width: 15%;
+				height: auto; 
+			} 
+
+			.container {
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				margin-top: -200px;
+				margin-left: -230px;
+				width: 450px;
+				height: 450px;
+				padding: 10px;
+				border-radius: 12px;
+				-moz-border-radius: 12px;
+                color: white;
+				background-color: #808080;
+			}
+
+			.button {
+				background: #00FF7F;
+				border-radius: 75%;
+				padding: 8px 20px;
+				color: #000;
+				font: normal 700 24px/1 "Calibri", sans-serif;
+				text-align: center;
+			}
+
+			input[type=text] {
+				width: 70%;
+				padding: 12px 20px;
+				margin: 8px 0;
+				box-sizing: border-box;
+				border: none;
+				border-radius: 3px;
+				border-bottom: 2px solid black;
+			}
+
+			.submit_button {
+				display: inline-block;
+				background-color: #4CAF50; /* Green */
+				border: none;
+				border-radius: 20px;
+				color: white;
+				padding: 10px 32px;
+				text-align: center;
+				text-decoration: none;
+				font-size: 15px;
+				margin: 2px 1px;
+				cursor: pointer;
+				width: 200px
+			}
+			
+			.account_button {
+				display: inline-block; 
+				background-color: #5f98d9; /* light blue */
+				border: none;
+				border-radius: 20px;
+				color: white;
+				padding: 5px 28px;
+				text-align: center;
+				text-decoration: none;
+				font-size: 15px;
+				margin: 2px 1px;
+				cursor: pointer;
+				width: 200px;
+			}
+
+			label {
+				display: inline-block;
+				width: 300px;
+				height: 1px;
+				text-align: left;
+            }
+
+            
+            
+            
+		</style>
+	</head>
+
+	<body>
+    <div class="title">
+      <h1>EdNet</h1>
+    </div>
+    <div class="tab">
+        <button class="tablinks" onclick="clickInner('index.html')">Browse</button>
+        <button class="tablinks" onclick="clickInner('about.html')">About</button>
+        <button class="tablinks" onclick="clickInner('modules.html')">Modules</button>
+        <button class="tablinks" onclick="clickInner('login_page.html')">Login</button>
+        <button class="tablinks" onclick="clickInner('register.html')">Register</button>
+    </div>
+    
+		<div style="margin: 15px;">
+			<div class="container">
+				<center>
+					<br>
+					<h2><b>Welcome!</b></h2>
+					<br>
+					<div>
+					<form id="join">
+						<label>Username</label>
+						<input type="text" id="user_name" placeholder="Username" required></input>
+						<label>Password</label>
+						<input type="text" id="pass_word" placeholder="Password" required></input>
+						<br><br>
+						<button class="submit_button">Login</button>
+						<br><br>
+					</form>
+					</div>
+					<br>
+					<button class="account_button" onclick="clickInner('register.html')">Create an Account</button>
+				</center>
+			</div>
+		</div>
+
+	</body>
+	
+</html>
